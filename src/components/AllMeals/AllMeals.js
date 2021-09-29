@@ -12,13 +12,18 @@ const AllMeals = (props) => {
     }, [props.searchedText])
 
     return (
-        <Container className="my-5">
-            <Row xs={1} md={3} className="g-4">
-                {
-                    getmeals.map(meal => <SingleMeal key={meal.idMeal} fullMealData={meal} />)
-                }
-            </Row>
-        </Container>
+        getmeals ?
+            <Container className="my-5">
+                <Row xs={1} md={3} className="g-4">
+                    {
+                        getmeals.map(meal => <SingleMeal key={meal.idMeal} fullMealData={meal} />)
+                    }
+                </Row>
+            </Container>
+            :
+            <Container>
+                <h2>Nothing is found</h2>
+            </Container>
     );
 };
 

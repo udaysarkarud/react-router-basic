@@ -13,10 +13,15 @@ const SingleMealDetails = () => {
     const { strMeal, strInstructions } = mealDetails
 
     return (
-        <div>
-            <h1>Name:{strMeal}</h1>
-            <p>Deatils: {strInstructions}</p>
-        </div>
+        Object.keys(mealDetails).length === 0 ?
+            <div>
+                <h1>Loading</h1>
+            </div>
+            :
+            <div>
+                <h1>Name:{strMeal}</h1>
+                <p>Deatils: {strInstructions}</p>
+            </div>
     );
 };
 
